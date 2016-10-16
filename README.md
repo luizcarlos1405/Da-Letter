@@ -7,4 +7,6 @@ It can be downloaded here https://love2d.org/
 Launchung löve 2D games tutorial can be found here: https://love2d.org/wiki/Getting_Started
 The original has non royaltti free music, so I'm used a royaltti free here
 
+All the code in this repository and it's files can be used as you wish with no need to credit or anything.
+
 My contact: luizcarlos1405@gmail.com
