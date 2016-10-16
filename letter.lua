@@ -21,21 +21,7 @@ function letter:enter()
     end
     -- music
     wmn:pause()
-    music = {love.audio.newSource("/assets/sound/coisalinda.mp3", "stream"),
-            love.audio.newSource("/assets/sound/falsacancao.mp3", "stream"),
-            love.audio.newSource("/assets/sound/diaclarear.mp3", "stream"),
-            love.audio.newSource("/assets/sound/tempoperdido.mp3", "stream")}
-
-    function music:next()
-        music.current = music.current+1
-        if music.current > #music then music.current = 1 end
-        music[music.current]:play()
-        music[music.current]:getDuration()
-
-        timer.after(music[music.current]:getDuration()-2, function() music:next() end)
-    end
-    music.current = love.math.random(0, #music-1)
-    music:next()
+    music = {}
 
     -- blooms
     bloom:blur(false)
@@ -103,7 +89,6 @@ end
 function letter:leave()
     wmn:resume()
     button:clean()
-    music[music.current]:stop()
     timer.clear()
 end
 

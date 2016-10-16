@@ -54,7 +54,7 @@ function stateMenu:init()
     -- A timer for the blooms
     timerMenu = timer.new()
     -- Sound
-    wmn = love.audio.newSource("/assets/sound/wmn.mp3", "stream")
+    wmn = love.audio.newSource("/assets/sound/wmn.ogg", "stream")
     wmn:play()
     timerMenu.every(134, function() wmn:stop() wmn:play() end)
     -- cursor
