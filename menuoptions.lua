@@ -115,6 +115,7 @@ end
 function menuOptions:update(dt)
     world:update(dt)
     timerMenu.update(dt)
+    timerMusic.update(dt)
     particle:update(dt)
     bloom:update(dt)
     colors:update(dt)

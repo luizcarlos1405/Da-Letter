@@ -97,9 +97,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="150.44027"
-     inkscape:cy="301.30959"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="236.84619"
+     inkscape:cy="309.07621"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -474,6 +474,25 @@
              x="90.2957"
              y="952.69751">G</tspan></text>
       </g>
+    </g>
+    <g
+       id="g4206"
+       transform="translate(12.727925,12.727922)"
+       inkscape:export-filename="/home/luizcarlos1405/Palco/Surp/game/assets/images/discicon.png"
+       inkscape:export-xdpi="32.399994"
+       inkscape:export-ydpi="32.399994">
+      <circle
+         style="opacity:1;fill:#4c4c4c;fill-opacity:1;stroke:#11fdff;stroke-width:5.29060316;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle4200"
+         cx="108.51211"
+         cy="775.89301"
+         r="47.354698" />
+      <path
+         style="opacity:1;fill:#11fdff;fill-opacity:1;stroke:#11fdff;stroke-width:4.49644899;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 93.454846,755.28103 c -8.482675,-2.6e-4 -15.359308,6.87638 -15.359045,15.35905 0.0074,4.44152 1.937164,8.66236 5.291511,11.57363 l 11.892308,11.87454 c 4.410954,5.04255 13.23289,13.44122 13.23289,13.44122 0,0 8.82129,-8.39875 13.23207,-13.44122 l 11.83631,-11.81031 c 3.39211,-2.91553 5.3447,-7.16497 5.34751,-11.63786 2.6e-4,-8.48268 -6.87637,-15.35931 -15.35905,-15.35905 -7.33176,0.002 -13.63983,5.18576 -15.0626,12.37815 -1.422,-7.18844 -7.72417,-12.37112 -15.051904,-12.37815 z"
+         id="path4202"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccc" />
     </g>
   </g>
 </svg>

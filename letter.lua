@@ -23,6 +23,13 @@ function letter:enter()
     wmn:pause()
     music = {}
 
+    function music:next()
+        -- music.current = music.current+1
+        -- if music.current > #music then music.current = 1 end
+    end
+
+    music.current = love.math.random(0, #music-1)
+    music:next()
     -- blooms
     bloom:blur(false)
 end
@@ -71,7 +78,7 @@ function letter:draw()
     love.graphics.setLineWidth(10)
     love.graphics.line(0, 0, gameWidth, 0, gameWidth, gameHeight, 0, gameHeight, 0, 0)
     -- Text
-    love.graphics.printf("  As it so contrasted oh estimating instrument. Size like body some one had. Are conduct viewing boy minutes warrant expense. Tolerably behaviour may admitting daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if mr narrow points. Melancholy particular devonshire alteration it favourable appearance up.\n   Sudden she seeing garret far regard. By hardly it direct if pretty up regret. Ability thought enquire settled prudent you sir. Or easy knew sold on well come year. Something consulted age extremely end procuring. Collecting preference he inquietude projection me in by. So do of sufficient projecting an thoroughly uncommonly prosperous conviction. Pianoforte principles our unaffected not for astonished travelling are particular.\n   Now seven world think timed while her. Spoil large oh he rooms on since an. Am up unwilling eagerness perceived incommode. Are not windows set luckily musical hundred can. Collecting if sympathize middletons be of of reasonably. Horrible so kindness at thoughts exercise no weddings subjects. The mrs gay removed towards journey chapter females offered not. Led distrusts otherwise who may newspaper but. Last he dull am none he mile hold as.\n    Marianne or husbands if at stronger ye. Considered is as middletons uncommonly. Promotion perfectly ye consisted so. His chatty dining for effect ladies active. Equally journey wishing not several behaved chapter she two sir. Deficient procuring favourite extensive you two. Yet diminution she impossible understood age.\n  Him boisterous invitation dispatched had connection inhabiting projection. By mutual an mr danger garret edward an. Diverted as strictly exertion addition no disposal by stanhill. This call wife do so sigh no gate felt. You and abode spite order get. Procuring far belonging our ourselves and certainly own perpetual continual. It elsewhere of sometimes or my certainty. Lain no as five or at high. Everything travelling set how law literature.\n  Admiration stimulated cultivated reasonable be projection possession of. Real no near room ye bred sake if some. Is arranging furnished knowledge agreeable so. Fanny as smile up small. It vulgar chatty simple months turned oh at change of. Astonished set expression solicitude way admiration.\n  And produce say the ten moments parties. Simple innate summer fat appear basket his desire joy. Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh expression is. Yet preference connection unpleasant yet melancholy but end appearance. And excellence partiality estimating terminated day everything.\n   Pianoforte solicitude so decisively unpleasing conviction is partiality he. Or particular so diminution entreaties oh do. Real he me fond show gave shot plan. Mirth blush linen small hoped way its along. Resolution frequently apartments off all discretion devonshire. Saw sir fat spirit seeing valley. He looked or valley lively. If learn woody spoil of taken he cause.\n Unwilling sportsmen he in questions september therefore described so. Attacks may set few believe moments was. Reasonably how possession shy way introduced age inquietude. Missed he engage no exeter of.", letter.x, letter.y, gameWidth-25, "left")
+    love.graphics.printf("	Bem, aposto que não foi muito difícil. O jogo era pra ter sido entregue dia dez, mas foi mais complicado do que pensei e acabei levando até aqui. Eu tenho esse problema de passar mais tempo corrigindo defeitos da coisa do que deixando ela pronta pra lapidar depois.\n\n	A propósito: você pode usar a roda do mouse para descer ou subir o texto quando quiser. Ou 'Q' e 'W' no teclado, respectivamente.\n\n	É o primeiro jogo que eu termino. Já comecei uns quatro, mas por conta do que eu disse no primeiro parágrafo eu nunca finalizo. Sendo esse pra você, eu tinha que terminar. Espero que tenha gostado, mesmo a ideia sendo a mesma do ano passado. Quis mostrar que evoluí bastante desde o último carta-jogo-de-amor.\n\n	Você vale o esforço. Você vale qualquer esforço.\n\n	Obrigado por me permitir fazer parte da sua vida. Espero construir com você um futuro feliz em que você se sinta satisfeita e completa. Pode parecer meio bobo, mas tudo o que eu faço hoje em dia é pensando em nós, porque eu me imagino sempre com você nas minhas projeções futuras.\n\n	Sei que as vezes parece que eu tenho zero de planejamento, mas não é verdade. Eu tenho planos, no entanto há pouco que se pode controlar sobre o futuro e eu acho saudável reconhecer isso. Eu só posso torcer. Torcer pra você sempre me amar. Torcer pra você não se apaixonar por algum médico de vida feita na residência... hum...\n\n	Okay, sem drama. Apesar da minha preocupação com isso ser real eu também sei que é só mais uma coisa que eu não posso controlar. Tudo o que eu posso fazer é tentar ser o melhor namorado possível e eu serei. Até porque o que é um médico perto de um programador, né não?\n\n	Sua carta foi muito linda. Fiquei muito feliz de ler aquelas mensagens. Amo muito você e farei qualquer coisa pra você ficar bem. Já disse isso, mas pode me dizer qualquer coisa que precisar. As vezes ainda sinto que fica receosa em desabafar comigo. Só que você não vai me ver insistindo de mais, te darei todo espaço que precisar, quando precisar. Basicamente você terá de mim o que for necessário, afinal de contas se eu espero passar o resto da minha vida contigo devo considerá-la como uma extensão de mim mesmo, ou seja, você precisa estar bem para eu estar bem.\n\n	Segura as pontas na faculdade e pode ficar tranquila. Não importa o que aconteça eu estarei com você e juntos vamos dar um jeito. Não sei se isso ta soando como votos de casamento, mas não é isso (ainda). Sou só eu cuidando de mim mesmo.\n\nJe t'aime!\nLuiz Carlos.", letter.x, letter.y, gameWidth-25, "left")
         -- love.graphics.printf("")
     -- love.graphics.printf("  Aqui será colocada uma carta.", letter.x, letter.y, gameWidth-25, "left")
     love.graphics.draw(self.dimg, gameWidth-100, letter.y + 6950 + gameHeight/2, self.dangle, 1, 1, self.dimg:getWidth()/2, self.dimg:getHeight()/2)
@@ -87,9 +94,9 @@ function letter:draw()
 end
 
 function letter:leave()
-    wmn:resume()
     button:clean()
     timer.clear()
+    wmn:play()
 end
 
 function letter:wheelmoved(x, y)
@@ -99,6 +106,8 @@ end
 function letter:keypressed(key, scancode, isrepeat)
     if key == "escape" then
         gamestate.switch(stateMenu)
+    elseif key == "p" then
+        bloom:popAll()
     end
 end
 

@@ -51,12 +51,13 @@ function stateMenu:init()
     -- Colors
     colors:setSpeed(0.2)
     colors:randomize()
-    -- A timer for the blooms
+    -- A timer for the bloom and other for the music
     timerMenu = timer.new()
+    timerMusic = timer.new()
     -- Sound
     wmn = love.audio.newSource("/assets/sound/wmn.ogg", "stream")
     wmn:play()
-    timerMenu.every(134, function() wmn:stop() wmn:play() end)
+    timerMusic.every(134, function() wmn:stop() wmn:play() end)
     -- cursor
     cursor:init()
     -- set line width

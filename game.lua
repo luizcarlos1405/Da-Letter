@@ -240,6 +240,7 @@ function stateGame:update(dt)
     particle:update(dt)
     button:update(dt)
     timerMenu.update(dt)
+    timerMusic.update(dt)
     gameBloom:update(dt)
     bloom:update(dt)
     gravity:update(dt)
@@ -343,9 +344,6 @@ end
 
 function stateGame:mousepressed(x, y, mouseButton)
     x, y = push:toGame(x, y)
-    if not x then
-        x = love.mouse.getX()
-    end
 
     if mouseButton == 1 then
         if disc.fixture:testPoint(x, y) then
@@ -370,7 +368,7 @@ function stateGame:keypressed(key)
     end
     if #gameBloom.bag == 0 then
         if key == "return" then
-            if buttonLetter then
+            if buttonLetter and settings.currentlevel == 10 then
                 buttonLetter:clicked()
             elseif buttonNextLevel then
                 buttonNextLevel:clicked()
@@ -381,9 +379,6 @@ end
 
 function stateGame:mousereleased(x, y, button)
     x, y = push:toGame(x, y)
-    if not x then
-        x = love.mouse.getX()
-    end
 
     disc:mousereleased(x, y, button)
 end

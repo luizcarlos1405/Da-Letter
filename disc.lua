@@ -31,9 +31,7 @@ end
 function disc:update(dt)
     if self.controls then
         local x, y = push:toGame(love.mouse.getPosition())
-        if not x then
-            x = love.mouse.getX()
-        end
+        
         if self.draging then
             local norm = math.sqrt((self.ix - x)^2 + (self.iy - y)^2)
             if norm > self.maxdrag then
